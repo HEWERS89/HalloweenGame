@@ -13,13 +13,28 @@
     <h1> Spooks Quiz Game </h1>
 </header>
 
-<body id="body-game">
+<body>
     <main>
+        <div class="container-panel">
+            <div class="question-area" class="hide">
+                <div id="questions">Question</div>
+            </div>
+            <div id="answers-area" class="answer-grid">
+                <button class="btn">Answer A</button>
+                <button class="btn">Answer B</button>
+                <button class="btn">Answer C</button>
+                <button class="btn">Answer D</button>
+            </div>
 
-    <header class="game-header">
+            <div class="control-buttons">
+            <button id ="start-btn" class="start-btn btn">START</button>
+            <button id="next-btn" class ="next-btn btn hide">NEXT</button>
+    </div>
+</div>
+
+    
         <span id="player"></span>
-        <span>Timer: <span id="timer">00:00</span></span>
-    </header>
+        <span>Score <span id="score">00</span></span>
 
 
    
