@@ -123,29 +123,20 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 2em;
     margin-left: 2em;
 }
 
-.login-background {
-    background-image:url(../img/background1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100%;
-
-}
 
 .login-title{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
     margin-left: 2em;
 }
 
-form {
-    padding-top: 10em;
+form{
+    padding-top: 5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,7 +144,7 @@ form {
     gap:2.5em;
 }
 
-#login-input{
+.login-box{
     background-color: black;
     box-shadow: 1px 1px 3px 4px rgb(248, 255, 255);
     box-sizing: border-box;
