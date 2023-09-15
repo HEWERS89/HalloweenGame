@@ -136,7 +136,7 @@ h1 {
 }
 
 form{
-    padding-top: 5em;
+    padding-top: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,12 +144,17 @@ form{
     gap:2.5em;
 }
 
-.login-box{
+#login-input {
+    background-color: black;
+}
+
+#login-box{
     background-color: black;
     box-shadow: 1px 1px 3px 4px rgb(248, 255, 255);
     box-sizing: border-box;
+    border-radius: 2em;
     width: 12em;
-    height: 2em;
+    height: 15em;
 }
 
 #start_btn{
