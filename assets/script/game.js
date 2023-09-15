@@ -1,8 +1,18 @@
+const questions =[
+    {
+        question: "what is bla bla?", 
+        options: [
+            "bla", "bla1", "bla2", "bla3"
+        ],
+        answer:"bla",
+    }
+]
 const startButton = document.getElementById('start-btn')
 const questionAreaElement = document.getElementById('question-area')
 const loginContainer=document.getElementById("login-continer")
 const gameContainer=document.getElementById("game-container")
 const submitForm = document.getElementById("login-box")
+
 
 
 let 
@@ -33,7 +43,7 @@ function playerName(){
 }
 
 
-function score(){
+function finalScore(){
 
 }
 
@@ -48,12 +58,12 @@ function selectAnswer(){
 
 
 
-const questions = [
-    {
-        question: 'what is 1+1',
-        answers: [
-            {text: '4', correct:true},
-            {text: '22', correct:false},
-        ]
-    }
-]
+// const questions = [
+//     {
+//         question: 'what is 1+1',
+//         answers: [
+//             {text: '4', correct:true},
+//             {text: '22', correct:false},
+//         ]
+//     }
+// ]
