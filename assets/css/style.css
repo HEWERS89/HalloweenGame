@@ -22,7 +22,7 @@ main{
     margin: 0;
     justify-content: center;
     align-items: center;
-    margin-top: 8em;
+    margin-top: 6em;
 }
 
 
@@ -30,20 +30,26 @@ h1 {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 1em;
-    margin-left: -2em;
 }
+
+
+
+#player{
+   margin-top: 1em;
+
+}
+
 
 .container-panel{
     width:30em;
     max-width: 60%;
-    border-radius: 8em;
-    padding:5em;
+    border-radius: 6em;
+    padding:4em;
     box-shadow: 0 0 20px 4px;
-    background-color: black, 40%;
+    cursor: pointer;
 }
 
 .answer-grid {
@@ -54,15 +60,34 @@ h1 {
 
 .btn{
     background-color: black;
-    border: solid, 1em, #e68a0a;
+}
+
+.btn:hover{
+    box-shadow: 0 0 5px 4px; 
 }
 
 .control-buttons{
-    display: ;
-
-
+    display: flex;
+    justify-content: center;
 }
 
+.btn.correct{
+      color :greenyellow;
+}
+
+.btn.wrong{
+    color:rgb(184, 0, 0);
+}
+
+.start-btn, .next-btn{
+    font-size: 2rem;
+    padding: 0.2em 0.5em;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
 
 .score {
 
