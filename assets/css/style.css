@@ -26,21 +26,23 @@ main{
 }
 
 
-h1 {
+
+#question-area{
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 1em;
+    margin: 2em;
 }
 
 
 
 #player{
-
+    display: flex;
+    gap: 4em;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
 }
-
 
 .container-panel{
     width:30em;
@@ -92,7 +94,7 @@ h1 {
 
 }
 
-/* .start_btn{
+/* .btn{
     font-family:'Creepster', cursive;
     background-color: black;
     color: #e68a0a;
@@ -100,10 +102,10 @@ h1 {
     box-sizing: border-box;
     height:2.5em;
     width:5em;
-} */
+}
 
 
-
+ */
 
 
 
@@ -128,11 +130,11 @@ h1 {
 }
 
 
-.login-title{
+h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 2em;
+    margin-top: 2em;
 }
 
 form{
