@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Halloween Theme Memory Game">
+    <meta name="keywords" content="Memory Game, Halloween Memory Game, Light Memory Game, Halloween">
+    <meta name="author" content="H.Ewers">
+    <link rel="stylesheet" href="assets/css/style.css">   
+    <link rel="shortcut icon" href="#">
+
+
+</head>
+<body id="body-login">
+    <header>
+        <h1  class="login-title">Spooky Quiz Game<br>Memory Game</h1>
+    </header>
+    
+    <main>
+
+    <audio src="assets/audio/peritune-spook4(chosic.com).mp3" loop="true" auto-start="true"></audio>
+
+        <div class="login-background" id="login-continer">
+
+        <!--Rules of the game----->
+            <div class="info">
+                <div class="info-title">
+                    <span>Rules of the Game!</span>
+                </div>
+                <div class="info-rules">
+                    <div class="info"> </div>
+                    <div class="info"> </div>
+                    <div class="info"> </div>
+                    <div class="info"> </div>
+                </div>
+            </div>
+
+
+
+            <form id="login-box">
+                <label id="user-name" for="login-input">User Name:</label>
+                <input id="login-input" placeholder="Name" type="text">
+                <button id="login-btn" type="submit">Start</button>
+            </form>
+        </div>
+        <div class="container-panel hide" id="game-container">
+            <div id="player">
+                <div>Score</div> <div id="score">00</div>
+            </div>
+            <div id="question-area" class="hide">
+                <div id="questions">Question</div>
+            </div>
+            <div id="answers-area" class="answer-grid">
+                <button class="btn">Answer A</button>
+                <button class="btn">Answer B</button>
+                <button class="btn">Answer C</button>
+                <button class="btn">Answer D</button>
+            </div>
+
+            <div class="control-buttons">
+                <button id ="start-btn" class="start-btn btn">START</button>
+                <button id="next-btn" class ="next-btn btn hide">NEXT</button>
+            </div>
+        </div>
+    </main>
+        
+    <script rel="script-login" src="assets/script/game.js"></script>
+</body>
+</html>
+
+
+
+
