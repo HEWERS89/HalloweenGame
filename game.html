@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spooky Memory Game</title>
-
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -15,8 +15,13 @@
 
 <body>
     <main>
-        <div class="container-panel">
-            <div class="question-area" class="hide">
+
+        <div id="player">
+            <div>Score</div> <div id="score">00</div>
+        </div>
+         
+    <div class="container-panel">
+            <div id="question-area" class="hide">
                 <div id="questions">Question</div>
             </div>
             <div id="answers-area" class="answer-grid">
@@ -32,14 +37,10 @@
     </div>
 </div>
 
-    
-        <span id="player"></span>
-        <span>Score <span id="score">00</span></span>
-
-
-   
+  
     </main>    
-     
-    <script rel="script-game" src="game.js"></script>
+
+    <script rel="script-game" src="assets/script/game.js"></script>
+
 </body>
 </html>
