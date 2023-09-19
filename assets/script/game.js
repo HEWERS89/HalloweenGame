@@ -2,7 +2,7 @@ const questions =
 [
 {
     question: "What is Sabrina's family name in Sabrina The Teenage  Witch",
-    answer: [
+    answers: [
     {text: 'Potionman', correct: false},
     {text: 'Broomman', correct:false},
     {text:'Spellman', correct:true},
@@ -12,7 +12,7 @@ const questions =
 
 {
     question: 'What are Vampires not afraid of?',
-     answer: [ 
+     answers: [ 
         {text: 'Garlic', correct:false},
         {text:'Chocolate', correct:true},
         {text: 'Sunlight', correct:false},
@@ -22,7 +22,7 @@ const questions =
 
 {
     question: 'Complete the name of this song,I put a ______ on you',
-     answer: [ 
+     answers: [ 
         {text: 'Potion', correct:true},
         {text: 'Spell', correct:false},
         {text: 'Pumpkin', correct:false},
@@ -32,7 +32,7 @@ const questions =
 
 {
     question: 'In which country did Halloween start?',
-     answer: [ 
+     answers: [ 
         {text: 'Brazil', correct:false},
         {text: 'India', correct:false},
         {text: 'Ireland', correct: true},
@@ -42,7 +42,7 @@ const questions =
 
 {
     question: 'The word Halloween means what?',
-     answer: [ 
+     answers: [ 
         {text: 'Scary Night', correct:false},
         {text: 'Reunion Day', correct:false},
         {text: 'Candy Day', correct: false},
@@ -52,7 +52,7 @@ const questions =
 
 {
     question: 'The three Witches in Hocus Pocus are Winnie, Mary and...',
-     answer: [ 
+     answers: [ 
         {text: 'Sarah', correct:true},
         {text: 'Jamie', correct:false},
         {text: 'Daisy', correct: false},
@@ -62,7 +62,7 @@ const questions =
 
 {
     question: 'Where do pumpkins grow?',
-     answer: [ 
+     answers: [ 
         {text: 'Vines', correct:true},
         {text: 'Hallophopb Stalks', correct:false},
         {text: 'Trees', correct: false},
@@ -72,7 +72,7 @@ const questions =
 
 {
     question: 'Who wrote Frankenstein?',
-     answer: [ 
+     answers: [ 
         {text: 'Percy Shelly', correct:false},
         {text: 'Bram Stoker', correct:false},
         {text: 'Elizabeth Lunt', correct: false},
@@ -82,7 +82,7 @@ const questions =
 
 {
     question: 'Which animal among these are associated with Halloween',
-     answer: [ 
+     answers: [ 
         {text: 'White Rats', correct:false},
         {text: 'Brown Bears', correct:false},
         {text: 'Black Cats', correct: true},
@@ -91,9 +91,9 @@ const questions =
 },
 
 {
-    question: 'According to Voodoo religion how many souls does each person have?'
-     answer: [ 
-        {text: 'One', correct:false},
+    question: 'According to Voodoo religion how many souls does each person have?',
+     answers: [
+        {text: 'One', correct:false,},
         {text: 'Three', correct:false},
         {text: 'Seven', correct: false},
         {text: 'Two', correct:true},
@@ -111,12 +111,12 @@ const submitForm = document.getElementById('login-box')
 //game
 const gameContainer=document.getElementById('game-container')
 const questionAreaElement = document.getElementById('question-area')
-const questionELement =document.getElementById('question')
-const answerButtons =document.getElementById('answers-area')
+const questionElement =document.getElementById('question')
+const answerButtonElement =document.getElementById('answer-buttons')
 const nextButton = document.getElementById('next-btn')
 const resetButton = document.getElementById('reset-btn')
 
-let shuffledQuestions, currentQuestionIndex, userName
+let shuffleQuestions, userName, finalScore, currQuestionIndex
 
 
 
@@ -128,31 +128,32 @@ function startGame(e) {
     e.preventDefault()
     console.log('Game Started')
     startButton.classList.add('hide'),
-    questionAreaElement.classList.remove('hide'),
-    loginContainer.classList.add('hide')
-    gameContainer.classList.remove('hide')
-    shuffledQuestions = questions.sort(()=> Math.random() - .5)
-    currentQuestionIndex = 0
-    NextQuestion()
+    loginContainer.classList.add('hide'),
+    gameContainer.classList.remove('hide'),
+    shuffleQuestions = questions.sort(()=> Math.random() - .5),
+    currQuestionIndex = 0,
+    nextQuestion()
 }
-
-
 
 //Get players name//
 function playerName(e){
 
 }
 
+  function nextQuestion() {
+    nextButton.classList.remove('hide');
+    showQuestion(shuffleQuestions[currQuestionIndex]);
+    answerButtonElement.textContent (shuffleQuestions[currQuestionIndex]).answers;
+  }
+  
 
-function finalScore(){
-
+function showQuestion(questions){
+    questionElement.innerText = questions.question;
+    answerButtonElement.innerText= questions.answers;
+        button.addEventListener('click', selectAnswer);
+        answerButtonElement.append(button);
 }
 
-
-
-function NextQuestion(){
-revealQuestion(shuffledQuestions[currentQuestionIndex])
-}
 
 
 function selectAnswer(){

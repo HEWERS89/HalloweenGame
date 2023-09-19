@@ -50,7 +50,6 @@ main{
     border-radius: 6em;
     padding:4em;
     box-shadow: 0 0 20px 4px;
-    cursor: pointer;
 }
 
 .answer-grid {
@@ -70,17 +69,18 @@ main{
 .control-buttons{
     display: flex;
     justify-content: center;
+
 }
 
-.btn.correct{
+.answer-btn.correct{
       color :greenyellow;
 }
 
-.btn.wrong{
+.answer-btn.wrong{
     color:rgb(184, 0, 0);
 }
 
-.start-btn, .next-btn{
+.start-btn, .next-btn, .reset-btn{
     font-size: 2rem;
     padding: 0.2em 0.5em;
     align-items: center;
