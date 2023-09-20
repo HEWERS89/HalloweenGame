@@ -159,6 +159,10 @@ form{
     height: 15em;
 }
 
+#user-name{
+    color: #e68a0a;
+}
+
 #start_btn{
     background-color: black;
     width:3em;
