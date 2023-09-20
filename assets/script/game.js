@@ -119,7 +119,8 @@ let shuffleQuestions, currQuestionIndex, userName, finalScore
 
 
 //Start Game//
-submitForm.addEventListener('submit', startGame);
+submitForm.addEventListener('submit', startGame, playerName);
+
 
 //hide start button initiate game questions//
 function startGame(e) {
@@ -128,10 +129,15 @@ function startGame(e) {
     startButton.classList.add('hide'),
     loginContainer.classList.add('hide'),
     gameContainer.classList.remove('hide'),
-    userName =playerName.value;
     shuffleQuestions = questions.sort(()=> Math.random() - .5),
     currQuestionIndex = 0,
     nextQuestion()
+}
+
+function playerName(event) {
+    event.preventDefault();
+    localStorage.setItem('player', input.value);
+    window.location = 'index.html';
 }
 
 function nextQuestion() {
