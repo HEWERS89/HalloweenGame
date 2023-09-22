@@ -107,7 +107,7 @@ const submitForm = document.getElementById('login-box')
 const gameContainer=document.getElementById('game-container')
 const questionAreaElement = document.getElementById('question-area')
 const questionElement =document.getElementById('question')
-const answerButtonElement =document.getElementById('buttons')
+const answerButtonElement =document.getElementById('answer-buttons')
 const nextButton = document.getElementById('next-btn')
 const resetButton = document.getElementById('reset-btn')
 
@@ -136,26 +136,31 @@ function playerName() {
     const userName= document.getElementById("user-name").value;
     localStorage.setItem("playerName", userName);
     window.location.href = "index.html";
+    userName = localStorage.getItem("playerName");
+    document.getElementById("login-input").innerHTML = userName;
 }
 
 function nextQuestion() {
     nextButton.classList.remove('hide');
     nextButton.addEventListener('click', nextQuestion);
     showQuestion(shuffleQuestions[currQuestionIndex])
-    // answerButtonElement.textContent = questions[currQuestionIndex].answers[0];
   }
     
-  //function to display question
+//function to display question
 function showQuestion(questions){
-    questionElement.innerText = questions.question;
-    answerButtonElement.innerText=questions.answers;
-    questions.answers.forEach( (answers) => {
-        if (answers.correct) {
-            answerButtonElement.dataset.correct === 'true';
-        }
-        answerButtonElement.addEventListener('click', selectAnswer);
-        
-    });
+  questionElement.innerText = questions.question;
+  console.log(questions.answers);
+  let answerOptions = questions.answers
+  answerOptions.forEach(answer => {
+      const button = document.createElement('button');
+      button.innerText = answer.text;
+      button.classList.add('btn');
+      if (answer.correct) {
+          button.dataset.correct = answer.correct;
+      }
+      button.addEventListener('click', selectAnswer);
+      answerButtonElement.appendChild(button);
+  });
 }
 
 //function for user to select answers
