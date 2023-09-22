@@ -40,15 +40,12 @@ const questions =
 ]
 },
 
-{
-    question: 'The word Halloween means what?',
-     answers: [ 
-        {text: 'Scary Night', correct:false},
-        {text: 'Reunion Day', correct:false},
-        {text: 'Candy Day', correct: false},
-        {text: 'Saints Evening', correct:true},
-]
-},
+// {
+//     question: 'The word Halloween means what?',
+//      answers: [ 
+//          'Scary Night', 'Reunion Day','Candy Day','Saints Evening'],
+//          correct: 'Saints Evening'
+// },
 
 {
     question: 'The three Witches in Hocus Pocus are Winnie, Mary and...',
@@ -105,21 +102,21 @@ const questions =
 const startButton = document.getElementById('start-btn')
 const loginContainer=document.getElementById('login-continer')
 const submitForm = document.getElementById('login-box')
-const playerName =document.getElementById('user-name')
+// const playerName =document.getElementById('user-name')
 //game
 const gameContainer=document.getElementById('game-container')
 const questionAreaElement = document.getElementById('question-area')
 const questionElement =document.getElementById('question')
-const answerButtonElement =document.getElementById('answer-buttons')
+const answerButtonElement =document.getElementById('buttons')
 const nextButton = document.getElementById('next-btn')
 const resetButton = document.getElementById('reset-btn')
 
 
-let shuffleQuestions, currQuestionIndex, userName, finalScore
+let shuffleQuestions, currQuestionIndex, finalScore
 
 
 //Start Game//
-submitForm.addEventListener('submit', startGame, playerName);
+submitForm.addEventListener('submit', startGame);
 
 
 //hide start button initiate game questions//
@@ -134,67 +131,60 @@ function startGame(e) {
     nextQuestion()
 }
 
-function playerName(event) {
-    event.preventDefault();
-    localStorage.setItem('player', input.value);
+
+function playerName() {
+    const userName= document.getElementById("user-name").value;
+    localStorage.setItem("playerName", userName);
+    window.location.href = "index.html";
 }
 
 function nextQuestion() {
-    nextButton.addEventListener('click', nextQuestion)
     nextButton.classList.remove('hide');
-    initiateReset()
+    nextButton.addEventListener('click', nextQuestion);
     showQuestion(shuffleQuestions[currQuestionIndex])
-    answerButtonElement.textContent = questions[currQuestionIndex].answers[0];
+    // answerButtonElement.textContent = questions[currQuestionIndex].answers[0];
   }
     
+  //function to display question
 function showQuestion(questions){
     questionElement.innerText = questions.question;
-    answerButtonElement.innerHTML=questions.answers;
+    answerButtonElement.innerText=questions.answers;
     questions.answers.forEach( (answers) => {
-        const button = document.createElement ('button')
-        button.innerText = answers.text;
-        button.classList.add('btn');
         if (answers.correct) {
-            button.dataset.correct='true';
+            answerButtonElement.dataset.correct === 'true';
         }
-        button.addEventListener('click', selectAnswer);
-        answerButtonElement.append(button);
+        answerButtonElement.addEventListener('click', selectAnswer);
+        
     });
 }
-  
-  function initiateReset() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    while (answerButtonElement.firstChild) {
-      answerButtonElement.removeChild(answerButtonElement.firstChild)
-    }
-  }
-  
+
+//function for user to select answers
   function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct === 'true';
+    setStatusClass(selectedButton, correct);
     Array.from(answerButtonElement.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct)
-    })
+      setStatusClass(button, button.dataset.correct === 'true');
+    });
     if (shuffleQuestions.length > currQuestionIndex + 1) {
-      nextButton.classList.remove('hide')
+      nextButton.classList.remove('hide');
     } else {
-      resetButton.innerText = 'reset-btn'
-      resetButton.classList.remove('hide')
+      resetButton.innerText = 'Reset';
+      resetButton.classList.remove('hide');
     }
   }
-  
+
   function setStatusClass(element, correct) {
     clearStatusClass(element)
-    if (correct) {
-      element.classList.add('correct')
-    } else {
-      element.classList.add('wrong')
-    }
+    if (correct === true ) {
+      element.classList.add('correct')}
+      else {
+        element.classList.add('wrong')}
   }
   
   function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
   }
+  
+  
