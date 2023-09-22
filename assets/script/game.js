@@ -40,6 +40,7 @@ const questions =
 ]
 },
 
+
 // {
 //     question: 'The word Halloween means what?',
 //      answers: [ 
@@ -171,7 +172,7 @@ function showQuestion(questions){
     Array.from(answerButtonElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct === 'true');
     });
-    if (shuffleQuestions.length > currQuestionIndex + 1) {
+    if (shuffleQuestions.length > currQuestionIndex) {
       nextButton.classList.remove('hide');
     } else {
       resetButton.innerText = 'Reset';
@@ -179,11 +180,19 @@ function showQuestion(questions){
     }
   }
 
+  function resetQuestion() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonElement.firstChild) {
+      answerButtonElement.removeChild(answerButtonElement.firstChild)
+    }
+  }
+
   function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct === true ) {
       element.classList.add('correct')}
-      else {
+      else (correct === false ); {
         element.classList.add('wrong')}
   }
   
