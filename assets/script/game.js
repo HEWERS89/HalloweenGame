@@ -137,7 +137,6 @@ function startGame(e) {
 function playerName(event) {
     event.preventDefault();
     localStorage.setItem('player', input.value);
-    window.location = 'index.html';
 }
 
 function nextQuestion() {
