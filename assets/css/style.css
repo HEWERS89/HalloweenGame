@@ -80,10 +80,6 @@ main{
     color:rgb(184, 0, 0);
 }
 
-.hide{
-    display: none;
-}
-
 /*Login Page */
 
 .info{
@@ -153,4 +149,6 @@ form{
         box-sizing: border-box;
 }
 
-
+.hide{
+    display: none;
+}

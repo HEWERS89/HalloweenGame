@@ -22,8 +22,8 @@ const questions = [
   {
     question: "Complete the name of this song,I put a ______ on you",
     answers: [
-      { text: "Potion", correct: true },
-      { text: "Spell", correct: false },
+      { text: "Potion", correct: false },
+      { text: "Spell", correct: true },
       { text: "Pumpkin", correct: false },
       { text: "Costume", correct: false },
     ],
@@ -113,34 +113,29 @@ const questionElement = document.getElementById("question");
 const answerButtonElement = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const resetButton = document.getElementById("reset-btn");
-// const questionNumber = document.getElementById('question-number-container')
+const currQuestionNumber = document.getElementById('current-question-number')
+
 
 let shuffleQuestions, currQuestionIndex, finalScore;
+let currentQuestionNumberDisplay= 0;
 
 //Start Game//
 submitForm.addEventListener("submit", startGame);
 
 //hide start button initiate game questions//
 function startGame(e) {
-  e.preventDefault(),
-    console.log("Game Started"),
-    startButton.classList.add("hide"),
-    loginContainer.classList.add("hide"),
-    submitForm.classList.add("hide"),
-    gameContainer.classList.remove("hide"),
+  e.preventDefault();
+    console.log("Game Started");
+    startButton.classList.add("hide");
+    loginContainer.classList.add("hide");
+    submitForm.classList.add("hide");
+    gameContainer.classList.remove("hide");
+    userName = document.getElementById('login-input').value,
     //shuffle questions set question index
     (shuffleQuestions = questions.sort(() => Math.random() - 0.5)),
     (currQuestionIndex = 0),
     nextQuestion();
 }
-
-// function playerName() {
-//     const userName= document.getElementById("user-name").value;
-//     localStorage.setItem("playerName", userName);
-//     window.location.href = "index.html";
-//     userName = localStorage.getItem("playerName");
-//     document.getElementById("login-input").innerHTML = userName;
-// }
 
 //function to display question
 function showQuestion(questions) {
@@ -167,7 +162,7 @@ function selectAnswer(e) {
   Array.from(answerButtonElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct === "true");
   });
-  if (shuffleQuestions.length > currQuestionIndex + 1) {
+  if (currQuestionIndex + 1 <= shuffleQuestions.length) {
     nextButton.classList.remove("hide");
   } else {
     resetButton.innerText = "Reset";
@@ -178,12 +173,22 @@ function selectAnswer(e) {
 //display next question
 function nextQuestion() {
   resetQuestion();
-  showQuestion(shuffleQuestions[currQuestionIndex + 1]);
-  nextButton.addEventListener("click", resetQuestion);
+  showQuestion(shuffleQuestions[currQuestionIndex]);
+  currQuestionIndex++;
+  currentQuestionNumberDisplay++;
+  currQuestionNumber.innerText = currentQuestionNumberDisplay
 }
+  nextButton.addEventListener("click", nextQuestion);
+  resetButton.addEventListener('click', resetGame);
 
-//Restart game
-
+  //Restart Game
+  function resetGame(){
+    startButton.classList.remove("hide");
+    loginContainer.classList.remove("hide");
+    submitForm.classList.remove("hide");
+    gameContainer.classList.add("hide");
+  }
+//function to set right and wrong questions link with CSS 
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct === true) {
@@ -205,18 +210,3 @@ function resetQuestion() {
     answerButtonElement.removeChild(answerButtonElement.firstChild);
   }
 }
-
-function questionNumber() {
-  let totalQuestions;
-  totalQuestions = questions.length;
-  if (questions.length < totalQuestions) {
-    totalQuestions++;
-  }
-}
-
-// function finalScore(){
-//   var score=0 ;
-//   for (var i=1;i<=currQuestionIndex+1;i++){
-//     score+=Number(localStorage.getItem("question"+i));
-//     console.log(score);
-//     }}
