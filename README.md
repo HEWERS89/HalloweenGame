@@ -1,4 +1,5 @@
-# Spooky Spooky Quiz Halloween Inspired Memory Game!
+# Spooky Quiz 
+## Halloween Inspired Memory Game!
 
 ![HaloweenGame](assets/img/haloween_game.png)
 
