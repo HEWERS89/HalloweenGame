@@ -111,9 +111,12 @@ const questionElement =document.getElementById('question')
 const answerButtonElement =document.getElementById('answer-buttons')
 const nextButton = document.getElementById('next-btn')
 const resetButton = document.getElementById('reset-btn')
+// const questionNumber = document.getElementById('question-number-container')
 
 
-let shuffleQuestions, currQuestionIndex, finalScore
+let shuffleQuestions, 
+currQuestionIndex, 
+finalScore
 
 
 //Start Game//
@@ -128,6 +131,7 @@ function startGame(e) {
     loginContainer.classList.add('hide'),
     submitForm.classList.add('hide'),
     gameContainer.classList.remove('hide'),
+    //shuffle questions set question index
     shuffleQuestions = questions.sort(()=> Math.random() - .5),
     currQuestionIndex = 0,
     nextQuestion()
@@ -142,39 +146,32 @@ function startGame(e) {
 //     document.getElementById("login-input").innerHTML = userName;
 // }
 
-function nextQuestion() {
-    nextButton.classList.remove('hide');
-    nextButton.addEventListener('click', nextQuestion);
-    resetQuestion();
-    showQuestion(shuffleQuestions[currQuestionIndex])
+  //function to display question
+  function showQuestion(questions){
+    questionElement.innerText = questions.question;
+    console.log(questions.answers);
+    let answerOptions = questions.answers
+    answerOptions.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButtonElement.appendChild(button);
+    });
   }
-    
-//function to display question
-function showQuestion(questions){
-  questionElement.innerText = questions.question;
-  console.log(questions.answers);
-  let answerOptions = questions.answers
-  answerOptions.forEach(answer => {
-      const button = document.createElement('button');
-      button.innerText = answer.text;
-      button.classList.add('btn');
-      if (answer.correct) {
-          button.dataset.correct = answer.correct;
-      }
-      button.addEventListener('click', selectAnswer);
-      answerButtonElement.appendChild(button);
-  });
-}
 
 //function for user to select answers
   function selectAnswer(e) {
-    const selectedButton = e.target;
+    const selectedButton = e.target
     const correct = selectedButton.dataset.correct === 'true';
-    setStatusClass(selectedButton, correct);
+    setStatusClass(document.body, correct)
     Array.from(answerButtonElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct === 'true');
     });
-    if (shuffleQuestions.length > currQuestionIndex) {
+    if (shuffleQuestions.length > currQuestionIndex +1) {
       nextButton.classList.remove('hide');
     } else {
       resetButton.innerText = 'Reset';
@@ -182,19 +179,21 @@ function showQuestion(questions){
     }
   }
 
+  //display next question
+function nextQuestion() {
+  resetQuestion();
+  showQuestion(shuffleQuestions[currQuestionIndex])
+  }
+
+//Restart game
   function resetQuestion() {
-    clearStatusClass(document.body),
-    nextButton.classList.add('hide'),
-    resetButton.classList.remove('hide');
+    nextButton.classList.add('hide')
+    clearStatusClass(document.body)
     while (answerButtonElement.firstChild) {
       answerButtonElement.removeChild(answerButtonElement.firstChild)
     }
   }
-
-  function playAgain(){
-
-  }
-
+  
   function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct === true ) {
@@ -207,5 +206,17 @@ function showQuestion(questions){
     element.classList.remove('correct')
     element.classList.remove('wrong')
   }
-  
-  
+
+  function questionNumber(){
+    let totalQuestions;
+    totalQuestions= questions.length;
+    if (questions.length < totalQuestions)
+    {totalQuestions++};
+  }
+
+  // function finalScore(){
+  //   var score=0 ;
+  //   for (var i=1;i<=currQuestionIndex+1;i++){
+  //     score+=Number(localStorage.getItem("question"+i));
+  //     console.log(score);
+  //     }}
