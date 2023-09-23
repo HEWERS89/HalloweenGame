@@ -45,8 +45,6 @@ main{
 }
 
 .container-panel{
-    width:30em;
-    max-width: 60%;
     border-radius: 6em;
     padding:4em;
     box-shadow: 0 0 20px 4px;
@@ -94,7 +92,7 @@ main{
 
 }
 
-.btn button#login-btn{
+/* .btn button#login-btn{
     font-family:'Creepster', cursive;
     font-size: 0.5;
     align-items: center;
@@ -104,33 +102,22 @@ main{
     box-sizing: border-box;
     height:1.5em;
     width:3em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} */
 
 /*Login Page */
 
 .info{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:center;
     align-items: center;
-    margin-top: 2em;
-    margin-left: 2em;
+    margin-bottom: 2em;
+
 }
 
+.info-title{
+    font-size: 1.5rem;
+}
 
 h1{
     display: flex;
@@ -156,23 +143,34 @@ form{
     background-color: black;
     box-shadow: 1px 1px 3px 4px rgb(248, 255, 255);
     box-sizing: border-box;
-    border-radius: 2em;
+    border-radius: 3em;
     width: 12em;
     height: 15em;
+}
+
+.login-background{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #user-name{
     color: #e68a0a;
 }
 
-#start_btn{
+#login-btn{
     background-color: black;
     width:3em;
     height:2em;
     margin-bottom: 2em;
 }
 
-#start_btn:hover{
+#login-btn:hover{
         box-shadow: 1px 1px 3px 4px rgb(248, 255, 255);
         box-sizing: border-box;
 }
+
+

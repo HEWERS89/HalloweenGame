@@ -101,7 +101,7 @@ const questions =
 
 //login
 const startButton = document.getElementById('start-btn')
-const loginContainer=document.getElementById('login-continer')
+const loginContainer = document.getElementById('login-container')
 const submitForm = document.getElementById('login-box')
 // const playerName =document.getElementById('user-name')
 //game
@@ -126,6 +126,7 @@ function startGame(e) {
     console.log('Game Started'),
     startButton.classList.add('hide'),
     loginContainer.classList.add('hide'),
+    submitForm.classList.add('hide'),
     gameContainer.classList.remove('hide'),
     shuffleQuestions = questions.sort(()=> Math.random() - .5),
     currQuestionIndex = 0,
@@ -133,17 +134,18 @@ function startGame(e) {
 }
 
 
-function playerName() {
-    const userName= document.getElementById("user-name").value;
-    localStorage.setItem("playerName", userName);
-    window.location.href = "index.html";
-    userName = localStorage.getItem("playerName");
-    document.getElementById("login-input").innerHTML = userName;
-}
+// function playerName() {
+//     const userName= document.getElementById("user-name").value;
+//     localStorage.setItem("playerName", userName);
+//     window.location.href = "index.html";
+//     userName = localStorage.getItem("playerName");
+//     document.getElementById("login-input").innerHTML = userName;
+// }
 
 function nextQuestion() {
     nextButton.classList.remove('hide');
     nextButton.addEventListener('click', nextQuestion);
+    resetQuestion();
     showQuestion(shuffleQuestions[currQuestionIndex])
   }
     
@@ -181,11 +183,16 @@ function showQuestion(questions){
   }
 
   function resetQuestion() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
+    clearStatusClass(document.body),
+    nextButton.classList.add('hide'),
+    resetButton.classList.remove('hide');
     while (answerButtonElement.firstChild) {
       answerButtonElement.removeChild(answerButtonElement.firstChild)
     }
+  }
+
+  function playAgain(){
+
   }
 
   function setStatusClass(element, correct) {
