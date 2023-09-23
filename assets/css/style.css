@@ -59,7 +59,7 @@ main{
 }
 
 .btn{
-    background-color: black;
+    background-color: #000000;
 }
 
 .btn:hover{
@@ -73,7 +73,7 @@ main{
 }
 
 .correct{
-      color :greenyellow;
+      color :rgb(173, 255, 47);
 }
 
 .wrong{
@@ -99,7 +99,6 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
 }
 
 form{
@@ -112,9 +111,12 @@ form{
 }
 
 #login-input {
-    background-color: black;
+    background-color: #000000;
 }
 
+h1.login-title{
+    padding-top: 1em;
+}
 #login-box{
     background-color: black;
     box-shadow: 1px 1px 3px 4px rgb(248, 255, 255);
@@ -138,7 +140,7 @@ form{
 }
 
 #login-btn{
-    background-color: black;
+    background-color: #000000;
     width:3em;
     height:2em;
     margin-bottom: 2em;

@@ -114,9 +114,11 @@ const answerButtonElement = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const resetButton = document.getElementById("reset-btn");
 const currQuestionNumber = document.getElementById('current-question-number')
+const finalScore = document.getElementById('final-score')
 
 
-let shuffleQuestions, currQuestionIndex, finalScore;
+let shuffleQuestions, currQuestionIndex
+let currScore, correctAnswers=0
 let currentQuestionNumberDisplay= 0;
 
 //Start Game//
@@ -164,10 +166,13 @@ function selectAnswer(e) {
   });
   if (currQuestionIndex + 1 <= shuffleQuestions.length) {
     nextButton.classList.remove("hide");
-  } else {
+  }else{
+    finalScore.classList.remove('hide');
+    finalScore.innerHTML=`<h2>Your Score is ${currScore}</h2>`;
+    console.log(correctAnswers)
     resetButton.innerText = "Reset";
     resetButton.classList.remove("hide");
-  }
+  };
 }
 
 //display next question
@@ -177,6 +182,14 @@ function nextQuestion() {
   currQuestionIndex++;
   currentQuestionNumberDisplay++;
   currQuestionNumber.innerText = currentQuestionNumberDisplay
+}
+
+function resetQuestion() {
+  clearStatusClass(document.body);
+  nextButton.classList.add("hide");
+  while (answerButtonElement.firstChild) {
+    answerButtonElement.removeChild(answerButtonElement.firstChild);
+  }
 }
   nextButton.addEventListener("click", nextQuestion);
   resetButton.addEventListener('click', resetGame);
@@ -203,10 +216,3 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-function resetQuestion() {
-  clearStatusClass(document.body);
-  nextButton.classList.add("hide");
-  while (answerButtonElement.firstChild) {
-    answerButtonElement.removeChild(answerButtonElement.firstChild);
-  }
-}
