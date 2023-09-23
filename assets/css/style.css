@@ -4,6 +4,8 @@
 
 *, *::before, *::after{
     box-sizing: border-box;
+    margin:0;
+    padding:0;
     font-family: 'Creepster', cursive;
     color:  #e68a0a;
 }

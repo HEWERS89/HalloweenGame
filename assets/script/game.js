@@ -185,7 +185,8 @@ function startGame(e) {
   //display next question
 function nextQuestion() {
   resetQuestion();
-  showQuestion(shuffleQuestions[currQuestionIndex])
+  showQuestion(shuffleQuestions[currQuestionIndex + 1])
+  nextButton.addEventListener('click',resetQuestion)
   }
 
 //Restart game
