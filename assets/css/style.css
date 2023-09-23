@@ -78,31 +78,9 @@ main{
     color:rgb(184, 0, 0);
 }
 
-/* .start-btn, .next-btn, .reset-btn{
-    font-size: 2rem;
-    padding: 0.2em 0.5em;
-    align-items: center;
-} */
-
 .hide{
     display: none;
 }
-
-.score {
-
-}
-
-/* .btn button#login-btn{
-    font-family:'Creepster', cursive;
-    font-size: 0.5;
-    align-items: center;
-    background-color: black;
-    color: #e68a0a;
-    box-shadow: 1px 1px 3px 4px rgb(248, 255, 255);
-    box-sizing: border-box;
-    height:1.5em;
-    width:3em;
-} */
 
 /*Login Page */
 

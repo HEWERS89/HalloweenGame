@@ -41,12 +41,15 @@ const questions =
 },
 
 
-// {
-//     question: 'The word Halloween means what?',
-//      answers: [ 
-//          'Scary Night', 'Reunion Day','Candy Day','Saints Evening'],
-//          correct: 'Saints Evening'
-// },
+{
+    question: 'The word Halloween means what?',
+     answers: [ 
+      {text: 'Scary Night', correct:false},
+      {text: 'Reunion Day', correct:false},
+      {text: 'Candy Day', correct: false},
+      {text: 'Saints Evening', correct:true},
+]
+},
 
 {
     question: 'The three Witches in Hocus Pocus are Winnie, Mary and...',
@@ -166,10 +169,10 @@ function startGame(e) {
 //function for user to select answers
   function selectAnswer(e) {
     const selectedButton = e.target
-    const correct = selectedButton.dataset.correct === 'true';
-    setStatusClass(document.body, correct)
+    const correct = selectedButton.dataset.correct ==='true';
+    setStatusClass(document.body, correct);
     Array.from(answerButtonElement.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct === 'true');
+      setStatusClass(button, button.dataset.correct ==='true');
     });
     if (shuffleQuestions.length > currQuestionIndex +1) {
       nextButton.classList.remove('hide');
@@ -186,19 +189,12 @@ function nextQuestion() {
   }
 
 //Restart game
-  function resetQuestion() {
-    nextButton.classList.add('hide')
-    clearStatusClass(document.body)
-    while (answerButtonElement.firstChild) {
-      answerButtonElement.removeChild(answerButtonElement.firstChild)
-    }
-  }
-  
+
   function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct === true ) {
       element.classList.add('correct')}
-      else (correct === false ); {
+      else {
         element.classList.add('wrong')}
   }
   
@@ -207,6 +203,15 @@ function nextQuestion() {
     element.classList.remove('wrong')
   }
 
+  function resetQuestion() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonElement.firstChild) {
+      answerButtonElement.removeChild(answerButtonElement.firstChild)
+    }
+  }
+  
+    
   function questionNumber(){
     let totalQuestions;
     totalQuestions= questions.length;
