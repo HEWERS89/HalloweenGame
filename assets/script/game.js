@@ -1,3 +1,5 @@
+/* jshint esversion:8 */
+
 const questions = [
   {
     question: "What is Sabrina's family name in Sabrina The Teenage  Witch",
@@ -108,17 +110,15 @@ const submitForm = document.getElementById("login-box");
 // const playerName =document.getElementById('user-name')
 //game
 const gameContainer = document.getElementById("game-container");
-const questionAreaElement = document.getElementById("question-area");
 const questionElement = document.getElementById("question");
 const answerButtonElement = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const resetButton = document.getElementById("reset-btn");
-const currQuestionNumber = document.getElementById('current-question-number')
-const finalScore = document.getElementById('final-score')
+const currQuestionNumber = document.getElementById('current-question-number');
+// const finalScore = document.getElementById('final-score')
 
-
-let shuffleQuestions, currQuestionIndex
-let currScore, correctAnswers=0
+let userName;
+let shuffleQuestions, currQuestionIndex;
 let currentQuestionNumberDisplay= 0;
 
 //Start Game//
@@ -132,10 +132,9 @@ function startGame(e) {
     loginContainer.classList.add("hide");
     submitForm.classList.add("hide");
     gameContainer.classList.remove("hide");
-    userName = document.getElementById('login-input').value,
-    //shuffle questions set question index
-    (shuffleQuestions = questions.sort(() => Math.random() - 0.5)),
-    (currQuestionIndex = 0),
+    userName = document.getElementById('login-input').value;
+    (shuffleQuestions = questions.sort(() => Math.random() - 0.5));
+    (currQuestionIndex = 0);
     nextQuestion();
 }
 
@@ -162,14 +161,17 @@ function selectAnswer(e) {
   const correct = selectedButton.dataset.correct === "true";
   setStatusClass(document.body, correct);
   Array.from(answerButtonElement.children).forEach((button) => {
-    setStatusClass(button, button.dataset.correct === "true");
+    setStatusClass(button, button.dataset.correct === "true");{
+      button.classList.add("correct");
+    }
+    button.disabled =true;
   });
   if (currQuestionIndex + 1 <= shuffleQuestions.length) {
     nextButton.classList.remove("hide");
   }else{
     resetButton.innerText = "Reset";
     resetButton.classList.remove("hide");
-  };
+  }
 }
 
 //display next question
@@ -178,9 +180,10 @@ function nextQuestion() {
   showQuestion(shuffleQuestions[currQuestionIndex]);
   currQuestionIndex++;
   currentQuestionNumberDisplay++;
-  currQuestionNumber.innerText = currentQuestionNumberDisplay
+  currQuestionNumber.innerText = currentQuestionNumberDisplay;
 }
 
+//Get nreset question
 function resetQuestion() {
   clearStatusClass(document.body);
   nextButton.classList.add("hide");
@@ -213,3 +216,4 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
+

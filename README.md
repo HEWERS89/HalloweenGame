@@ -35,7 +35,9 @@ The website can be accessed via this [link](https://hewers89.github.io/Halloween
 
 ### Main Hero Image
 
-![background]( /HalloweenGame/assets/img/background.png)
+#### Background image used available via this [link](https://wallpapers.com/images/high/dark-halloween-pumpkin-faces-psvp5yk9634sp4r5)
+
+
 
 ### Colour scheme
 
@@ -54,7 +56,7 @@ Follow the steps to deploy:
 ## Local Deployment
 
 To make a local copy of this project, you can clone it. In your IDE, type the following command:
-git clone
+git clone https://hewers89.github.io/HalloweenGame/
 
 ## Testing
 
@@ -67,9 +69,19 @@ git clone
 ### Chrome Responsive Viewer
 
 [LoginPage](HalloweenGame\assets\documentation\chrome_responsive_viewer_loginpage.png)
+
 ### Manual Testing
 
 | Feature | Action | Expected result | Tested | Passed | Comments |
+| --- | --- | --- | --- | --- | --- |
+| Login Form | | | | | |
+| UserName | Enter UserName | The user is required to put in a user name before entering the game If a user does not enter user name the start button is disabled | Yes | Yes | - |
+| Start Button | Click on Start button | The user is redirected to the game| Yes | Yes | - |
+| Answer Buttons | Click on answer buttons  | Glow red for wrong answer / Green for right answer | Yes | Yes | - |
+| Next Button| Click on next button | The next questiona and possible answers are displayed | Yes | Yes | - |
+| Reset Button | Click on the reset button | The user is redirected to the initial log in page | Yes | Yes | - |
+| Question counter| Next button click | The counter increments  | Yes | Yes | - |
+
 
 ### Compatability
 
@@ -79,7 +91,18 @@ git clone
 
 ### Validator
 
+[Javascript](/HalloweenGame/assets/documentation/JShint.pdf)
+
+[HTML](/HalloweenGame/assets/documentation/HTML.pdf)
+
+[CSS](/HalloweenGame/assets/documentation/CSS.pdf)
+
 ## Bugs
+
+The answers where duplicating instead of moving to the next question, this was due to a +1 i added to questions in javascript once removed this stopped the duplication.
+
+The reset button didnt reset the question counting, I passed the value of 0 to reset the counter at the click of reset. 
+
 
 ## Languages
 
@@ -87,7 +110,7 @@ git clone
 
 [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) used to add style and layout.
 
-[JavaScript]()
+[JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript) used to add functionality to the game
 
 [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to arrange items and make them responsive.
 
@@ -115,6 +138,8 @@ git clone
 [Light House](https://developer.chrome.com/docs/lighthouse/overview/)
 
 [HTML | CSS Validator](https://validator.w3.org/nu/)
+
+[JavaScript Validator]()
 
 ## Acknowledgments
 
