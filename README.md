@@ -11,7 +11,7 @@ Users will be able to select an answer, which if correct they'll move onto next 
 The site displays a username login page with the rules displayed.
 
 
-The website can be accessed via this [link]()
+The website can be accessed via this [link](https://hewers89.github.io/HalloweenGame/)
 
 ## User Stories / Goals
 

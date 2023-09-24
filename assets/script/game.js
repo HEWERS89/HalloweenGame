@@ -167,9 +167,6 @@ function selectAnswer(e) {
   if (currQuestionIndex + 1 <= shuffleQuestions.length) {
     nextButton.classList.remove("hide");
   }else{
-    finalScore.classList.remove('hide');
-    finalScore.innerHTML=`<h2>Your Score is ${currScore}</h2>`;
-    console.log(correctAnswers)
     resetButton.innerText = "Reset";
     resetButton.classList.remove("hide");
   };
@@ -196,6 +193,7 @@ function resetQuestion() {
 
   //Restart Game
   function resetGame(){
+    currentQuestionNumberDisplay=0;
     startButton.classList.remove("hide");
     loginContainer.classList.remove("hide");
     submitForm.classList.remove("hide");
@@ -215,4 +213,3 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
-
