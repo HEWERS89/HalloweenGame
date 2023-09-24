@@ -114,16 +114,22 @@ The reset button didnt reset the question counting, I passed the value of 0 to r
 
 [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to arrange items and make them responsive.
 
-
-
 [VScode](https://code.visualstudio.com/) used as my tool for writing and editing code.
 
 [Github](https://github.com/) used to host the code of the website.
 
 [Gitpod](https://www.gitpod.io/) an open source CDE
 
+## Comments
+Due to changing game idea late into development time some features are missing from the game that i would have liked. A function to generate final score with players name. And noise to accompany right and wrong answers. Unfortunately time ran out on this project.
+I learned a lot throughout this process, Javascript was and is a challenge I plan on developing those skills.
+I plan on updating this game at a later date or re-designing to reflect skills learned later.
 
 ## Credits
+
+I watched many videos on building quiz game using JS as well as 
+
+watching videos for little aspects of the game to display only a few: [CodeExplained](https://www.bing.com/videos/riverview/relatedvideo?&q=quiz+game+javascript&&mid=F31B1728C251B7B5773CF31B1728C251B7B5773C&&FORM=VRDGAR)  [BrianDesign](https://www.bing.com/videos/riverview/relatedvideo?&q=Quiz+JavaScript&&mid=F5CCFD2CF7B72463BEF1F5CCFD2CF7B72463BEF1&&FORM=VRDGAR)
 
 [Code](https://www.w3schools.com) Used to understand flexbox and box models
 
