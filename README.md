@@ -39,15 +39,7 @@ The website can be accessed via this [link](https://hewers89.github.io/Halloween
 
 ### Colour scheme
 
-![Color pallet](/HalloweenGame/assets/img/color1.png) 
-
-![Color Pallet](/HalloweenGame/assets/img/color2.png)
-
-![Color Pallet](/HalloweenGame/assets/img/color3.png)
-
-![Color Pallet](/HalloweenGame/assets/img/color4.png)
-
-![Color Pallet](/HalloweenGame/assets/img/color5.png)
+![Color pallet](/HalloweenGame/assets/documentation//color1.png)![Color Pallet](/HalloweenGame/assets/documentation//color2.png)![Color Pallet](/HalloweenGame/assets/documentation//color3.png)![Color Pallet](/HalloweenGame/assets/documentation/color4.png)![Color Pallet](/HalloweenGame/assets/documentation/color5.png)
 
 
 ## Deployment
@@ -68,15 +60,13 @@ git clone
 
 ### Light House
 
-- Login Page [Desktop]() |
-  [Mobile]()
+- Login Page [Desktop](/HalloweenGame/assets/documentation/Lighthouse_performance1_desktop.pdf) |
+  [Mobile](/HalloweenGame/assets/documentation/Lighthouse_performance1_mobile.pdf)
+- Game Page [Mobile](/HalloweenGame/assets/documentation/Lighthouse_performance_desktop.pdf)
 
 ### Chrome Responsive Viewer
 
-- Login Page
-
-- Game Page
-
+[LoginPage](HalloweenGame\assets\documentation\chrome_responsive_viewer_loginpage.png)
 ### Manual Testing
 
 | Feature | Action | Expected result | Tested | Passed | Comments |
