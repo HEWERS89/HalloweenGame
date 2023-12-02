@@ -6,7 +6,7 @@ const questions = [
     answers: [
       { text: "Potionman", correct: false },
       { text: "Broomman", correct: false },
-      { text: "Spellman", correct: true },
+      { text: "Spellman", correct: true, },
       { text: "Magicman", correct: false },
     ],
   },
@@ -107,7 +107,7 @@ const questions = [
 const startButton = document.getElementById("start-btn");
 const loginContainer = document.getElementById("login-container");
 const submitForm = document.getElementById("login-box");
-// const playerName =document.getElementById('user-name')
+
 //game
 const gameContainer = document.getElementById("game-container");
 const questionElement = document.getElementById("question");
@@ -115,12 +115,10 @@ const answerButtonElement = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const resetButton = document.getElementById("reset-btn");
 const currQuestionNumber = document.getElementById('current-question-number');
-// const finalScore = document.getElementById('final-score')
 
 let userName;
 let shuffleQuestions, currQuestionIndex;
 let currentQuestionNumberDisplay= 0;
-
 //Start Game//
 submitForm.addEventListener("submit", startGame);
 
@@ -137,6 +135,12 @@ function startGame(e) {
     (currQuestionIndex = 0);
     nextQuestion();
 }
+
+function setPlayer(userName){
+  localStorage.setItem('player',userName );
+  userName.innerText= player.gameContainer
+}
+console.log(userName)
 
 //function to display question
 function showQuestion(questions) {
@@ -165,7 +169,7 @@ function selectAnswer(e) {
       button.classList.add("correct");
     }
     button.disabled =true;
-  });
+  }); 
   if (currQuestionIndex + 1 <= shuffleQuestions.length) {
     nextButton.classList.remove("hide");
   }else{
@@ -216,4 +220,5 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
+
 
