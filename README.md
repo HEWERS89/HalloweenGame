@@ -1,13 +1,13 @@
 # Spooky Quiz 
 ## Halloween Inspired Memory Game!
 
-![HaloweenGame](assets/img/haloween_game.png)
+![HalloweenGame](assets/img/haloween_game.png)
 
 ## About Spooky Quiz Game
 
-The quiz game is a website for user to practice their knowledge on all things Haloween!
-New and frequent users can expect randomised questions each visit up to the maximum questions inputed. 
-Users will be able to select an answer, which if correct they'll move onto next question. 
+The quiz game is a website for user to practise their knowledge on all things Halloween!
+New and frequent users can expect randomised questions each visit up to the maximum questions inputted. 
+Users will be able to select an answer, which if correct they'll move onto the next question. 
 The site displays a username login page with the rules displayed.
 
 
@@ -16,7 +16,7 @@ The website can be accessed via this [link](https://hewers89.github.io/Halloween
 ## User Stories / Goals
 
 ### First Time Visitor and Returning Visitor Goals:
-* As a first time visitor i want to see a discriptive title and list of rules to determine what kind of game i will be playing.
+* As a first time visitor i want to see a descriptive title and list of rules to determine what kind of game i will be playing.
 
 * I want simple easy to use descriptive buttons to navigate through the game.
 
@@ -41,7 +41,11 @@ The website can be accessed via this [link](https://hewers89.github.io/Halloween
 
 ### Colour scheme
 
-![Color pallet](/HalloweenGame/assets/documentation//color1.png)![Color Pallet](/HalloweenGame/assets/documentation//color2.png)![Color Pallet](/HalloweenGame/assets/documentation//color3.png)![Color Pallet](/HalloweenGame/assets/documentation/color4.png)![Color Pallet](/HalloweenGame/assets/documentation/color5.png)
+![Color pallet](/HalloweenGame/assets/documentation//color1.png)
+![Color Pallet](/HalloweenGame/assets/documentation//color2.png)
+![Color Pallet](/HalloweenGame/assets/documentation//color3.png)
+![Color Pallet](/HalloweenGame/assets/documentation/color4.png)
+![Color Pallet](/HalloweenGame/assets/documentation/color5.png)
 
 
 ## Deployment
@@ -51,7 +55,7 @@ The site was deployed to GitHub.
 Follow the steps to deploy:
 
 - In the Github repository, open the settings tab
-- From the drop-dowm menu, selct **Main** branch and then **Save**
+- From the drop-down menu, select **Main** branch and then **Save**
 
 ## Local Deployment
 
@@ -78,16 +82,16 @@ git clone https://hewers89.github.io/HalloweenGame/
 | UserName | Enter UserName | The user is required to put in a user name before entering the game If a user does not enter user name the start button is disabled | Yes | Yes | - |
 | Start Button | Click on Start button | The user is redirected to the game| Yes | Yes | - |
 | Answer Buttons | Click on answer buttons  | Glow red for wrong answer / Green for right answer | Yes | Yes | - |
-| Next Button| Click on next button | The next questiona and possible answers are displayed | Yes | Yes | - |
+| Next Button| Click on next button | The next questions and possible answers are displayed | Yes | Yes | - |
 | Reset Button | Click on the reset button | The user is redirected to the initial log in page | Yes | Yes | - |
 | Question counter| Next button click | The counter increments  | Yes | Yes | - |
 
 
-### Compatability
+### Compatibility
 
-[Google Chrome](https;//google.co.uk) Manually tested on google chrome for functionality , apperance and responsivness. All features passed.
+[Google Chrome](https;//google.co.uk) Manually tested on google chrome for functionality , appearance  and responsiveness. All features passed.
 
-[Internet Explorer](https://www.microsoft.com/en-gb/download/internet-explorer.aspx) Manually tested on google chrome for functionality , apperance and responsivness. All features passed.
+[Internet Explorer](https://www.microsoft.com/en-gb/download/internet-explorer.aspx) Manually tested on google chrome for functionality , apperance and responsiveness. All features passed.
 
 ### Validator
 
@@ -99,9 +103,9 @@ git clone https://hewers89.github.io/HalloweenGame/
 
 ## Bugs
 
-The answers where duplicating instead of moving to the next question, this was due to a +1 i added to questions in javascript once removed this stopped the duplication.
+The answers were duplicating instead of moving to the next question, this was due to a +1 i added to questions in javascript once removed this stopped the duplication.
 
-The reset button didnt reset the question counting, I passed the value of 0 to reset the counter at the click of reset. 
+The reset button didn't reset the question counting, I passed the value of 0 to reset the counter at the click of reset. 
 
 
 ## Languages
@@ -123,7 +127,7 @@ The reset button didnt reset the question counting, I passed the value of 0 to r
 ## Comments
 Due to changing game idea late into development time some features are missing from the game that i would have liked. A function to generate final score with players name. And noise to accompany right and wrong answers. Unfortunately time ran out on this project.
 I learned a lot throughout this process, Javascript was and is a challenge I plan on developing those skills.
-I plan on updating this game at a later date or re-designing to reflect skills learned later.
+I plan on updating this game at a later date or redesigning to reflect skills learned later.
 
 ## Credits
 
